@@ -5,10 +5,9 @@ metadata:
   name: {{ include "helloworld.metadataName" . }}
   labels:
     {{- include "helloworld.labels" . | nindent 4 }}
-  {{- if .Values.commonAnnotations }}
   annotations:
+    link.argocd.argoproj.io/external-link: http://{{ .Values.routeHostname }}
     {{- include "helloworld.annotations" . | nindent 4 }}
-  {{- end }}
 spec:
   host: {{ .Values.routeHostname }}
   port:
