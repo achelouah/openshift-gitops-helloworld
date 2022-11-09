@@ -10,6 +10,9 @@ template:
 template-prod:
 	helm template $(APP) --values $(PROD_VALUES) $(APP)/
 
+template-qualif:
+	helm template $(APP) --values $(QUALIF_VALUES) $(APP)/
+
 install:
 	helm install $(APP) --namespace $(NAMESPACE) $(APP)/
 
