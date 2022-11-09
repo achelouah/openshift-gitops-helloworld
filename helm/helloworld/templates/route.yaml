@@ -1,6 +1,7 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
+  namespace: {{ .Values.namespace }}
   name: {{ include "helloworld.metadataName" . }}
   labels:
     {{- include "helloworld.labels" . | nindent 4 }}

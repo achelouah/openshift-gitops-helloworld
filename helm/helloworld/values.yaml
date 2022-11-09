@@ -87,6 +87,8 @@ tolerations: []
 
 affinity: {}
 
+namespace: helloworld
+
 commonNamePrefix: ""
 
 commonLabels:
