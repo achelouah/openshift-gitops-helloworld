@@ -3,10 +3,13 @@ kind: Kustomization
 metadata:
   name: arbitrary
 
+namespace: helloworld
+
 commonLabels:
   app: hello
 
 resources:
+- namespace.yaml
 - deployment.yaml
 - service.yaml
 - configMap.yaml
