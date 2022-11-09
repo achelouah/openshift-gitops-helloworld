@@ -1,0 +1,13 @@
+# https://github.com/kubernetes-sigs/kustomize/issues/97 => crd to fix spec.to.name when using namePrefix
+namePrefix: prod-
+commonLabels:
+  variant: prod
+  org: acmeCorporation
+commonAnnotations:
+  note: Hello, I am production!
+resources:
+- ../../base
+patchesStrategicMerge:
+- deployment.yaml
+crds:
+- openshift-route.json

@@ -1,0 +1,13 @@
+# https://github.com/kubernetes-sigs/kustomize/issues/97 => crd to fix spec.to.name when using namePrefix
+namePrefix: qualif-
+commonLabels:
+  variant: qualif
+  org: acmeCorporation
+commonAnnotations:
+  note: Hello, I am qualif!
+resources:
+- ../../base
+patchesStrategicMerge:
+- map.yaml
+crds:
+- openshift-route.json
